@@ -1,0 +1,21 @@
+{
+  "name": "request-sdk",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint --ext .js ./ --fix"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "eslint": "^8.11.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.2",
+    "lerna": "^6.0.0",
+    "lint-staged": "^13.0.3"
+  }
+}
