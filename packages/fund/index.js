@@ -4,7 +4,7 @@ const htmlTableToJson = require('html-table-to-json')
 const assert = require('assert')
 const { utils, requestLog } = require('@request-sdk/base')
 
-const pkg = require('../package.json')
+const pkg = require('./package.json')
 
 const url = 'https://fundf10.eastmoney.com/F10DataApi.aspx'
 const currentUrl = 'http://fundgz.1234567.com.cn'
