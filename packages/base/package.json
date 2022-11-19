@@ -30,5 +30,6 @@
   },
   "dependencies": {
     "shortid": "^2.2.16"
-  }
+  },
+  "gitHead": "01199f4466136c76c21e589ceca9011d9a52ae91"
 }
