@@ -1,0 +1,35 @@
+{
+  "name": "@request-sdk/fund",
+  "version": "0.0.6",
+  "description": "request sdk fund.",
+  "keywords": [
+    "fund"
+  ],
+  "author": "AlfieriChou <alfierichou@gmail.com>",
+  "homepage": "https://github.com/AlfieriChou/request-sdk#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "test": "__tests__"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AlfieriChou/request-sdk.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/fund.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/AlfieriChou/request-sdk/issues"
+  },
+  "dependencies": {
+    "@request-sdk/base": "^0.0.6",
+    "date-fns": "^2.29.3",
+    "got": "11",
+    "html-table-to-json": "^1.0.0"
+  }
+}
