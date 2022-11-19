@@ -1,6 +1,6 @@
 {
   "name": "@request-sdk/fund",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "fund request sdk",
   "keywords": [
     "fund"
