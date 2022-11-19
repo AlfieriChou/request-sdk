@@ -1,6 +1,6 @@
 {
   "name": "@request-sdk/fund",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "request sdk fund.",
   "keywords": [
     "fund"
@@ -27,7 +27,7 @@
     "url": "https://github.com/AlfieriChou/request-sdk/issues"
   },
   "dependencies": {
-    "@request-sdk/base": "^0.0.6",
+    "@request-sdk/base": "^0.0.7",
     "date-fns": "^2.29.3",
     "got": "11",
     "html-table-to-json": "^1.0.0"
