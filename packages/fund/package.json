@@ -1,0 +1,32 @@
+{
+  "name": "@request-sdk/fund",
+  "version": "0.0.0",
+  "description": "fund request sdk",
+  "keywords": [
+    "fund"
+  ],
+  "author": "AlfieriChou <alfierichou@gmail.com>",
+  "homepage": "https://github.com/AlfieriChou/request-sdk#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AlfieriChou/request-sdk.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/fund.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/AlfieriChou/request-sdk/issues"
+  }
+}

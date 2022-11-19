@@ -1,0 +1,32 @@
+{
+  "name": "@request-sdk/stock",
+  "version": "0.0.0",
+  "description": "request sdk stock",
+  "keywords": [
+    "stock"
+  ],
+  "author": "AlfieriChou <alfierichou@gmail.com>",
+  "homepage": "https://github.com/AlfieriChou/request-sdk#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AlfieriChou/request-sdk.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/stock.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/AlfieriChou/request-sdk/issues"
+  }
+}
