@@ -46,6 +46,14 @@ importers:
       got: 11.8.5
       html-table-to-json: 1.0.0
 
+  packages/stock:
+    specifiers:
+      '@request-sdk/base': workspace:^0.0.7
+      got: '11'
+    dependencies:
+      '@request-sdk/base': link:../base
+      got: 11.8.5
+
 packages:
 
   /@babel/code-frame/7.18.6:
