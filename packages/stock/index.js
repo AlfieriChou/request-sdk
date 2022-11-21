@@ -54,8 +54,9 @@ module.exports = class Api {
       })
   }
 
-  async get (url, data) {
+  async get (url, data, options = {}) {
     return this.request(url, {
+      ...options,
       context: {
         method: 'GET',
         data: data || {}
@@ -63,8 +64,9 @@ module.exports = class Api {
     })
   }
 
-  async post (url, data) {
+  async post (url, data, options = {}) {
     return this.request(url, {
+      ...options,
       context: {
         method: 'POST',
         data: data || {}
@@ -102,6 +104,8 @@ module.exports = class Api {
         ma: 60,
         symbol: this.getMarketCode(code),
         datalen: dataLen
+      }, {
+        responseType: 'json'
       })
       return ret
     } catch (err) {
