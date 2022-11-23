@@ -3,6 +3,7 @@ const assert = require('assert')
 const { utils, requestLog } = require('@request-sdk/base')
 
 const pkg = require('./package.json')
+
 const { getMarketCode } = require('./utils')
 
 const url = 'https://qt.gtimg.cn/q='
