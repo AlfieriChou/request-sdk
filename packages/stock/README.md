@@ -48,6 +48,12 @@ api.post('http://t.com/api/xxx', {
 })
 ```
 
+* getCurrentInfo
+
+```javascript
+api.getCurrentInfo('600900')
+```
+
 * loadHistoryData
 
 ```javascript
