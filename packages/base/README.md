@@ -4,7 +4,7 @@
 
 ## Usage
 
-```
+```javascript
 const { utils, requestLog } = require('@request-sdk/base')
 
 const logBody = false
