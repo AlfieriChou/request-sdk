@@ -1,10 +1,10 @@
 const { format } = require('date-fns')
 const got = require('got')
-const htmlTableToJson = require('html-table-to-json')
 const assert = require('assert')
 const { utils, requestLog } = require('@request-sdk/base')
 
 const pkg = require('./package.json')
+const { parseHistoryData, parseCurrentData } = require('./utils')
 
 const url = 'https://fundf10.eastmoney.com/F10DataApi.aspx'
 const currentUrl = 'http://fundgz.1234567.com.cn'
@@ -85,24 +85,6 @@ module.exports = class Api {
     })
   }
 
-  parseHistoryData (str) {
-    const htmlTable = str.split('"')[1]
-    const { results } = htmlTableToJson.parse(htmlTable)
-    return results[0].reduce((ret, item) => {
-      if (!item['单位净值']) {
-        return ret
-      }
-      return [...ret, {
-        date: item['净值日期'],
-        unitNetWorth: parseFloat(item['单位净值']),
-        totalNetWorth: parseFloat(item['累计净值']),
-        dailyGrowthRate: parseFloat((item['日增长率'] || '0%').split('%')[0]),
-        applyStatus: item['申购状态'],
-        redemptionStatus: item['赎回状态']
-      }]
-    }, [])
-  }
-
   async loadDataFromPrevNDays (code, n) {
     const page = Math.ceil(n / LIMIT)
     let currentPage = 1
@@ -113,7 +95,7 @@ module.exports = class Api {
           page: currentPage,
           per: LIMIT
         })
-        list = list.concat(this.parseHistoryData(ret))
+        list = list.concat(parseHistoryData(ret))
         currentPage += 1
       }
       return list.slice(0, n)
@@ -139,7 +121,7 @@ module.exports = class Api {
           edate: endDateStr,
           sdate: startDateStr
         })
-        list = list.concat(this.parseHistoryData(ret))
+        list = list.concat(parseHistoryData(ret))
         currentPage += 1
       }
       return list.slice(0, days)
@@ -191,17 +173,13 @@ module.exports = class Api {
     })
   }
 
-  parseCurrentData (str) {
-    return JSON.parse(str.split('jsonpgz(')[1].split(');')[0])
-  }
-
   async getCurrentData (code) {
     try {
       const ret = await this.loadCurrentData(code)
       if (!ret.includes(code)) {
         return {}
       }
-      const data = await this.parseCurrentData(ret)
+      const data = await parseCurrentData(ret)
       return {
         name: data.name,
         code,
