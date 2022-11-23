@@ -3,6 +3,7 @@ const assert = require('assert')
 const { utils, requestLog } = require('@request-sdk/base')
 
 const pkg = require('./package.json')
+const { getMarketCode } = require('./utils')
 
 const url = 'https://qt.gtimg.cn/q='
 const sinaUrl = 'https://money.finance.sina.com.cn/quotes_service/api/json_v2.php/CN_MarketData.getKLineData'
@@ -74,16 +75,9 @@ module.exports = class Api {
     })
   }
 
-  getMarketCode (code) {
-    if (code.startsWith('6') || code.startsWith('5')) {
-      return `sh${code}`
-    }
-    return `sz${code}`
-  }
-
   // eslint-disable-next-line consistent-return
   async getCurrentInfo (code) {
-    const marketCode = this.getMarketCode(code)
+    const marketCode = getMarketCode(code)
     try {
       const data = await this.get(`${url}${marketCode}`)
       const [, name, , currentWorth] = data.split('="')[1].split('~')
@@ -102,7 +96,7 @@ module.exports = class Api {
       const ret = await this.get(sinaUrl, {
         scale: scale || 60,
         ma: 60,
-        symbol: this.getMarketCode(code),
+        symbol: getMarketCode(code),
         datalen: dataLen
       }, {
         responseType: 'json'
