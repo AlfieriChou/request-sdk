@@ -28,8 +28,5 @@
   "bugs": {
     "url": "https://github.com/AlfieriChou/request-sdk/issues"
   },
-  "dependencies": {
-    "shortid": "^2.2.16"
-  },
   "gitHead": "62c9c28e39808521b3454b96b4c8004caadfc3c8"
 }

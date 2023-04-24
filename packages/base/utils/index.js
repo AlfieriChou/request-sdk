@@ -1,7 +1,7 @@
-const shortId = require('shortid')
+const crypto = require('crypto')
 
 exports.fillReqId = () => ctx => {
-  ctx.id = shortId.generate()
+  ctx.id = crypto.randomUUID()
 }
 
 exports.createLogger = logger => ctx => {
