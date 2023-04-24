@@ -1,6 +1,6 @@
 {
   "name": "@request-sdk/stock",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "stock request sdk.",
   "keywords": [
     "stock",
@@ -28,7 +28,7 @@
     "url": "https://github.com/AlfieriChou/request-sdk/issues"
   },
   "dependencies": {
-    "@request-sdk/base": "^0.0.10",
+    "@request-sdk/base": "^0.0.11",
     "got": "11"
   }
 }
